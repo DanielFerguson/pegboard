@@ -1,28 +1,30 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from "next/head";
+import Link from "next/link";
 
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
-import { MenuIcon, XIcon, FlagIcon } from '@heroicons/react/outline'
-
-// const navigation = [
-//   { name: 'Stats', href: '#stats' },
-//   { name: 'Get Notified', href: '#get-notified' },
-//   { name: 'Request', href: '#requests' },
-//   { name: 'Suggest', href: '#suggestions' },
-// ]
+import { Fragment } from "react";
+import { Popover, Transition } from "@headlessui/react";
+import { MenuIcon, XIcon, FlagIcon } from "@heroicons/react/outline";
 
 const socials = [
   {
-    name: 'Website',
-    href: 'https://danferg.com',
+    name: "Website",
+    href: "https://danferg.com",
     icon: (props) => (
-      <svg fill="currentColor" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12m2.557 16h-5.115c.546 2.46 1.441 4.114 2.558 5.744 1.194-1.741 2.041-3.41 2.557-5.744m-7.157 0h-4.567c1.236 2.825 3.704 4.972 6.755 5.716-1.048-1.733-1.783-3.658-2.188-5.716m13.767 0h-4.567c-.391 1.988-1.095 3.887-2.175 5.694 3.012-.763 5.517-2.895 6.742-5.694m-14.005-6h-4.962c-.267 1.313-.267 2.685 0 4h4.915c-.119-1.329-.101-2.672.047-4m7.661 0h-5.647c-.165 1.326-.185 2.672-.053 4h5.753c.133-1.328.111-2.673-.053-4m6.977 0h-4.963c.148 1.328.166 2.671.048 4h4.915c.26-1.285.273-2.648 0-4m-12.156-7.729c-3.077.732-5.567 2.886-6.811 5.729h4.653c.435-2.042 1.178-3.985 2.158-5.729m2.355-.048c-1.089 1.77-1.91 3.453-2.463 5.777h4.927c-.534-2.246-1.337-3.948-2.464-5.777m2.368.069c1.013 1.812 1.733 3.76 2.146 5.708h4.654c-1.232-2.816-3.762-4.958-6.8-5.708" /></svg>
+      <svg
+        fill="currentColor"
+        width="24"
+        height="24"
+        xmlns="http://www.w3.org/2000/svg"
+        fillRule="evenodd"
+        clipRule="evenodd"
+      >
+        <path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12m2.557 16h-5.115c.546 2.46 1.441 4.114 2.558 5.744 1.194-1.741 2.041-3.41 2.557-5.744m-7.157 0h-4.567c1.236 2.825 3.704 4.972 6.755 5.716-1.048-1.733-1.783-3.658-2.188-5.716m13.767 0h-4.567c-.391 1.988-1.095 3.887-2.175 5.694 3.012-.763 5.517-2.895 6.742-5.694m-14.005-6h-4.962c-.267 1.313-.267 2.685 0 4h4.915c-.119-1.329-.101-2.672.047-4m7.661 0h-5.647c-.165 1.326-.185 2.672-.053 4h5.753c.133-1.328.111-2.673-.053-4m6.977 0h-4.963c.148 1.328.166 2.671.048 4h4.915c.26-1.285.273-2.648 0-4m-12.156-7.729c-3.077.732-5.567 2.886-6.811 5.729h4.653c.435-2.042 1.178-3.985 2.158-5.729m2.355-.048c-1.089 1.77-1.91 3.453-2.463 5.777h4.927c-.534-2.246-1.337-3.948-2.464-5.777m2.368.069c1.013 1.812 1.733 3.76 2.146 5.708h4.654c-1.232-2.816-3.762-4.958-6.8-5.708" />
+      </svg>
     ),
   },
   {
-    name: 'GitHub',
-    href: 'https://github.com/danielferguson/pegboard',
+    name: "GitHub",
+    href: "https://github.com/danielferguson/pegboard",
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -34,34 +36,49 @@ const socials = [
     ),
   },
   {
-    name: 'LinkedIn',
-    href: 'https://linkedin.com/in/danferg',
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/danferg",
     icon: (props) => (
-      <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+      <svg
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+      </svg>
     ),
   },
-]
-
+];
 
 export default function Home({ resources }) {
   const records = resources.records;
 
   const apps = records.length;
   const docs = records.filter((item) => item.fields.Documentation).length;
-  const categories = [... new Set(records.map(item => item.fields.Category))].length
+  const categories = [...new Set(records.map((item) => item.fields.Category))]
+    .length;
 
   return (
     <div>
       <Head>
-        <title>Awesome tools to speed up yourdevelopment experience | Pegboard</title>
-        <meta name="description" content="A collection of resources, tools and collaborative means useful for you and your team to speed up development and delivery of exceptional experiences." />
-        <meta name="keywords" content="tools,develop,developer,experience,knowledge,hub,find,discover,collaborate,alternative,speed" />
+        <title>
+          Awesome tools to speed up yourdevelopment experience | Pegboard
+        </title>
+        <meta
+          name="description"
+          content="A collection of resources, tools and collaborative means useful for you and your team to speed up development and delivery of exceptional experiences."
+        />
       </Head>
       <main>
         {/* Hero */}
         <div className="bg-gray-50">
           <div className="relative overflow-hidden">
-            <div className="absolute inset-y-0 h-full w-full" aria-hidden="true">
+            <div
+              className="absolute inset-y-0 h-full w-full"
+              aria-hidden="true"
+            >
               <div className="relative h-full">
                 <svg
                   className="absolute right-full transform translate-y-1/3 translate-x-1/4 md:translate-y-1/2 sm:translate-x-1/2 lg:translate-x-full"
@@ -79,10 +96,21 @@ export default function Home({ resources }) {
                       height={20}
                       patternUnits="userSpaceOnUse"
                     >
-                      <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+                      <rect
+                        x={0}
+                        y={0}
+                        width={4}
+                        height={4}
+                        className="text-gray-200"
+                        fill="currentColor"
+                      />
                     </pattern>
                   </defs>
-                  <rect width={404} height={784} fill="url(#e229dbec-10e9-49ee-8ec3-0286ca089edf)" />
+                  <rect
+                    width={404}
+                    height={784}
+                    fill="url(#e229dbec-10e9-49ee-8ec3-0286ca089edf)"
+                  />
                 </svg>
                 <svg
                   className="absolute left-full transform -translate-y-3/4 -translate-x-1/4 sm:-translate-x-1/2 md:-translate-y-1/2 lg:-translate-x-3/4"
@@ -100,10 +128,21 @@ export default function Home({ resources }) {
                       height={20}
                       patternUnits="userSpaceOnUse"
                     >
-                      <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+                      <rect
+                        x={0}
+                        y={0}
+                        width={4}
+                        height={4}
+                        className="text-gray-200"
+                        fill="currentColor"
+                      />
                     </pattern>
                   </defs>
-                  <rect width={404} height={784} fill="url(#d2a68204-c383-44b1-b99f-42ccff4e5365)" />
+                  <rect
+                    width={404}
+                    height={784}
+                    fill="url(#d2a68204-c383-44b1-b99f-42ccff4e5365)"
+                  />
                 </svg>
               </div>
             </div>
@@ -111,13 +150,18 @@ export default function Home({ resources }) {
             <div className="relative pt-6 pb-16 sm:pb-24">
               <Popover>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                  <nav className="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
+                  <nav
+                    className="relative flex items-center justify-between sm:h-10 md:justify-center"
+                    aria-label="Global"
+                  >
                     <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
                       <div className="flex items-center justify-between w-full md:w-auto">
                         <a href="#">
                           <span className="sr-only">Workflow</span>
-                          <FlagIcon className="h-8 w-auto text-indigo-600" alt="Pegboard" />
-
+                          <FlagIcon
+                            className="h-8 w-auto text-indigo-600"
+                            alt="Pegboard"
+                          />
                         </a>
                         <div className="-mr-2 flex items-center md:hidden">
                           <Popover.Button className="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -136,10 +180,10 @@ export default function Home({ resources }) {
                     </div>
                     <div className="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
                       <span className="inline-flex rounded-md shadow">
-                        <Link
-                          href="/app"
-                        >
-                          <a className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500">Use app</a>
+                        <Link href="/app">
+                          <a className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500">
+                            Use app
+                          </a>
                         </Link>
                       </span>
                     </div>
@@ -162,7 +206,10 @@ export default function Home({ resources }) {
                     <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                       <div className="px-5 pt-4 flex items-center justify-between">
                         <div>
-                          <FlagIcon className="h-8 w-auto text-indigo-600" alt="Pegboard" />
+                          <FlagIcon
+                            className="h-8 w-auto text-indigo-600"
+                            alt="Pegboard"
+                          />
                         </div>
                         <div className="-mr-2">
                           <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -183,7 +230,9 @@ export default function Home({ resources }) {
                         ))} */}
                       </div>
                       <Link href="/app">
-                        <a className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500">Use app</a>
+                        <a className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500">
+                          Use app
+                        </a>
                       </Link>
                     </div>
                   </Popover.Panel>
@@ -193,18 +242,27 @@ export default function Home({ resources }) {
               <div className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6">
                 <div className="text-center">
                   <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                    <span className="block">Awesome tools to speed up your</span>
-                    <span className="block text-indigo-600">development experience</span>
+                    <span className="block">
+                      Awesome tools to speed up your
+                    </span>
+                    <span className="block text-indigo-600">
+                      development experience
+                    </span>
                   </h1>
                   <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                    A collection of resources, tools and collaborative means useful for you and your team to speed up development and delivery of exceptional experiences.
+                    A collection of resources, tools and collaborative means
+                    useful for you and your team to speed up development and
+                    delivery of exceptional experiences.
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 flex flex-col" aria-hidden="true">
+              <div
+                className="absolute inset-0 flex flex-col"
+                aria-hidden="true"
+              >
                 <div className="flex-1" />
                 <div className="flex-1 w-full bg-gray-800" />
               </div>
@@ -259,23 +317,40 @@ export default function Home({ resources }) {
         <div className="bg-indigo-800">
           <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 lg:py-20">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Collecting loads of handy tools for your next project</h2>
+              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+                Collecting loads of handy tools for your next project
+              </h2>
               <p className="mt-3 text-xl text-indigo-200 sm:mt-4">
-                Keeping ahead of the game is key in such fast-paced industry. Most of the tools will come and go, but finding that one diamond in the rough can be the difference between days, weeks of headaches and a blissful `npm i` or signup away.
+                Keeping ahead of the game is key in such fast-paced industry.
+                Most of the tools will come and go, but finding that one diamond
+                in the rough can be the difference between days, weeks of
+                headaches and a blissful `npm i` or signup away.
               </p>
             </div>
             <dl className="mt-10 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-3 sm:gap-8">
               <div className="flex flex-col">
-                <dt className="order-2 mt-2 text-lg leading-6 font-medium text-indigo-200">Apps</dt>
-                <dd className="order-1 text-5xl font-extrabold text-white">{apps}</dd>
+                <dt className="order-2 mt-2 text-lg leading-6 font-medium text-indigo-200">
+                  Apps
+                </dt>
+                <dd className="order-1 text-5xl font-extrabold text-white">
+                  {apps}
+                </dd>
               </div>
               <div className="flex flex-col mt-10 sm:mt-0">
-                <dt className="order-2 mt-2 text-lg leading-6 font-medium text-indigo-200">Docs</dt>
-                <dd className="order-1 text-5xl font-extrabold text-white">{docs}</dd>
+                <dt className="order-2 mt-2 text-lg leading-6 font-medium text-indigo-200">
+                  Docs
+                </dt>
+                <dd className="order-1 text-5xl font-extrabold text-white">
+                  {docs}
+                </dd>
               </div>
               <div className="flex flex-col mt-10 sm:mt-0">
-                <dt className="order-2 mt-2 text-lg leading-6 font-medium text-indigo-200">Categories</dt>
-                <dd className="order-1 text-5xl font-extrabold text-white">{categories}</dd>
+                <dt className="order-2 mt-2 text-lg leading-6 font-medium text-indigo-200">
+                  Categories
+                </dt>
+                <dd className="order-1 text-5xl font-extrabold text-white">
+                  {categories}
+                </dd>
               </div>
             </dl>
           </div>
@@ -466,39 +541,48 @@ export default function Home({ resources }) {
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
           <div className="flex justify-center space-x-6 md:order-2">
             {socials.map((item) => (
-              <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-gray-400 hover:text-gray-500"
+              >
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true" />
               </a>
             ))}
           </div>
           <div className="mt-8 md:mt-0 md:order-1">
-            <p className="text-center text-base text-gray-400">&copy; 2021 danferg.com All rights reserved.</p>
+            <p className="text-center text-base text-gray-400">
+              &copy; 2021 danferg.com All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch("https://api.airtable.com/v0/appxe7XCZbEYPjSLp/Services", {
-    headers: {
-      'Authorization': 'Bearer ' + process.env.AIRTABLE_KEY,
+  const res = await fetch(
+    "https://api.airtable.com/v0/appxe7XCZbEYPjSLp/Services",
+    {
+      headers: {
+        Authorization: "Bearer " + process.env.AIRTABLE_KEY,
+      },
     }
-  });
-  const resources = await res.json()
+  );
+  const resources = await res.json();
 
   if (!resources) {
     return {
       redirect: {
-        destination: '/',
+        destination: "/",
         permanent: false,
       },
-    }
+    };
   }
 
   return {
     props: { resources },
-  }
+  };
 }

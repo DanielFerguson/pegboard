@@ -53,14 +53,10 @@ export default function App({ resources }) {
   return (
     <div>
       <Head>
-        <title>App | Pegboard</title>
+        <title>Find your stack | Pegboard</title>
         <meta
           name="description"
-          content="A collection of resources, tools and collaborative means useful for you and your team to speed up development and delivery of exceptional experiences."
-        />
-        <meta
-          name="keywords"
-          content="tools,develop,developer,experience,knowledge,hub,find,discover,collaborate,alternative,speed"
+          content="Find the tools you need to help you accelerate your proof of concept, validation stage or even your production app."
         />
       </Head>
       <Transition.Root show={sidebarOpen} as={Fragment}>
